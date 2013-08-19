@@ -1,7 +1,7 @@
 <div id="myCarousel" class="carousel slide">
   <div class="carousel-inner">
     <div class="item active">
-      <img src="/assets/img/examples/slide-01.jpg" alt="">
+      <img src="/assets/img/iseevideo.png" alt="">
       <div class="container">
         <div class="carousel-caption">
           <h1>Example headline.</h1>
@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="item">
-      <img src="/assets/img/examples/slide-02.jpg" alt="">
+      <img src="/assets/img/test.jpg" alt="">
       <div class="container">
         <div class="carousel-caption">
           <h1>Another example headline.</h1>
@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="item">
-      <img src="/assets/img/examples/slide-03.jpg" alt="">
+      <img src="/assets/img/test1.png" alt="">
       <div class="container">
         <div class="carousel-caption">
           <h1>One more for good measure.</h1>

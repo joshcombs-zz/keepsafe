@@ -92,10 +92,10 @@ body {
 }
 .carousel img {
   position: absolute;
-  top: 0;
+  top: -150px;
   left: 0;
   min-width: 100%;
-  height: 500px;
+  height: 665px;
 }
 
 .carousel-caption {

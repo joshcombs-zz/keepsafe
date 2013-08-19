@@ -5168,6 +5168,10 @@ a.badge:focus {
 .badge-info {
   background-color: #5bc0de;
 }
+.label-danger,
+.badge-danger {
+  background-color: #dd514c;
+}
 
 .label-info[href],
 .badge-info[href] {

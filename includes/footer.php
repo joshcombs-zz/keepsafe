@@ -3,6 +3,8 @@
 <footer>
   <p class="pull-right"><a href="#">Back to top</a></p>
   <p>&copy; 2013 Keepsafe Security &middot; <a href="privacy.php">Privacy</a> &middot; <a href="terms.php">Terms</a></p>
+  <p><small>Keepsafe Security Systems is a full service alarm company specializing in the design and professional installation of wireless UL listed burglar alarm systems with remote access, fire alarms, residential and commercial security camera systems, CCTV, surveillance cameras, access control, key cards, key fobs, and more.</small></p>
+  <p class="pull-right">Website designed and maintained by <a href="mailto:josh.combs@me.com?Subject=KeepSafe%20Website">Josh Combs</a></p>
 </footer>
 
 </div><!-- /.container -->
