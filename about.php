@@ -9,7 +9,7 @@ $title = "KeepSafe Security &middot; About Us";
 <div class="well">
   <div class="featurette">
     <img src="http://localhost/assets/img/guarantee-icon.png" class="featurette-image pull-right">
-    <h2 class="featurette-heading">Founded in 1988. <span class="muted">We know our stuff.</span></h2>
+    <h2 class="featurette-heading">Founded in 1991. <span class="muted">We know our stuff.</span></h2>
     <p class="lead">As a locally owned
       provider of electronic security services in North Carolina - we design,
       install, monitor and service a complete line of comprehensive security

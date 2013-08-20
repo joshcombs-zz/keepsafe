@@ -5,46 +5,50 @@ $title = "KeepSafe Security &middot; Contact Us";
 
 <?php include 'includes/overall/header.php'; ?>
 
-<?php include 'includes/style.php'; ?>
-
-<!-- Three columns of text below the carousel -->
-
-<div class="page-header">
-	<h1>Needing Assistance?</h1>
-</div>
-<div class="row-fluid">
+<div class="row">
 	<div class="span8">
 		<div class="well">
+			<form method="POST" action="contact-form-submission.php" id="contact" class="form-horizontal">
+				<fieldset>
+					<legend>Sample Contact Form <small>(will not submit any information)</small></legend>
 
+					<?php  
+					if (isset($_GET['success'])) echo "<div class=\"alert alert-success\">Thank you. We have successfully received your message.<a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a></div>";
+					?>  
 
-			<div class="header">
-	<h3>Send us an Email!</h3>
-
-<?php  
-// check for a successful form post  
-if (isset($_GET['s'])) echo "<div class=\"alert alert-success\">".$_GET['s']."</div>";  
-// check for a form error  
-elseif (isset($_GET['e'])) echo "<div class=\"alert alert-error\">".$_GET['e']."</div>"; 
-?>  
-
-</div>
-			<form method="POST" action="contact-form-submission.php">
-				<div class="controls controls-row">
-					<input id="name" name="first_name" type="text" class="span6" placeholder="Name"> 
-					<input id="email" name="contact_email" type="email" class="span6" placeholder="Email address">
-				</div>
-				<div class="controls">
-					<textarea id="message" name="contact_message" class="span12" placeholder="Your Message" rows="5"></textarea>
-				</div>
-
-				<div class="controls">
-					<input type="hidden" name="save" value="contact">
-					<button id="contact-submit" type="submit" class="btn btn-primary input-medium pull-right">Send</button>
-				</div>
+					<div class="control-group">
+						<label class="control-label" for="name">Your Name</label>
+						<div class="controls">
+							<input id="name" name="name" type="text" class="input-xlarge" placeholder="John Doe"> 
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="contact_email">Your Email Address</label>
+						<div class="controls">
+							<input id="contact_email" name="contact_email" type="text" class="input-xlarge" placeholder="your@emailaddress.com">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="subject">Subject</label>
+						<div class="controls">
+							<input id="subject" name="subject" type="text" class="input-xlarge" placeholder="Inquiry">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="contact_message">Brief Message</label>
+						<div class="controls">
+							<textarea id="contact_message" name="contact_message" class="input-xlarge" placeholder="What can we help you with?" rows="5"></textarea>
+						</div>
+					</div>
+					<div class="controls">
+						<input type="hidden" name="save" value="contact">
+						<button id="contact-submit" type="submit" class="btn btn-primary input-medium">Send</button>
+						<button type="reset" class="btn input-medium">Cancel</button>
+					</div>
+				</fieldset>
 			</form>
 		</div>
 	</div>
-
 	<div class="span4">
 		<div class="well">
 			<h2>Questions?</h2>
@@ -60,7 +64,11 @@ elseif (isset($_GET['e'])) echo "<div class=\"alert alert-error\">".$_GET['e']."
 			</address>
 		</div>
 	</div>
-</div>
+</div> 
+<!-- .row-fluid -->
+
+
+
 <div class="row-fluid">
 	<div class="span12">
 		<div class="well">
@@ -68,6 +76,7 @@ elseif (isset($_GET['e'])) echo "<div class=\"alert alert-error\">".$_GET['e']."
 		</div>
 	</div>
 </div>
+<! -- .row-fluid -->
 
 
 <div class="thumbnail center well well-small text-center">
@@ -87,5 +96,44 @@ elseif (isset($_GET['e'])) echo "<div class=\"alert alert-error\">".$_GET['e']."
 	</form>
 </div>
 
+<script>
+$(document).ready(function(){
+
+	// Validate
+	// http://bassistance.de/jquery-plugins/jquery-plugin-validation/
+	// http://docs.jquery.com/Plugins/Validation/
+	// http://docs.jquery.com/Plugins/Validation/validate#toptions
+
+		$('#contact').validate({
+	    rules: {
+	      name: {
+	        minlength: 2,
+	        required: true
+	      },
+	      email: {
+	        required: true,
+	        email: true
+	      },
+	      subject: {
+	      	minlength: 2,
+	        required: true
+	      },
+	      message: {
+	        minlength: 2,
+	        required: true
+	      }
+	    },
+			highlight: function(element) {
+				$(element).closest('.control-group').removeClass('success').addClass('error');
+			},
+			success: function(element) {
+				element
+				.text('OK!').addClass('valid')
+				.closest('.control-group').removeClass('error').addClass('success');
+			}
+	  });
+
+}); // end document.ready
+</script>
 
 <?php include 'includes/overall/footer.php'; ?>

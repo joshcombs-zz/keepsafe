@@ -5,8 +5,6 @@ $title = "KeepSafe Security &middot; Home";
 
 <?php include 'includes/overall/header.php'; ?>
 
-<?php include 'includes/style.php'; ?>
-
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="span12 text-center">

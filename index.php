@@ -5,8 +5,6 @@ $title = "KeepSafe Security &middot; Home";
 
 <?php include 'includes/overall/header.php'; ?>
 
-<?php include 'includes/style.php'; ?>
-
   <?php include 'includes/carousel.php'; ?>
 
 
