@@ -12,6 +12,7 @@
 			<li class="<?php echo ($page_id == "home" ? "active" : "");?>"><a href="../index.php">Home</a></li>
 			<li class="<?php echo ($page_id == "about" ? "active" : "");?>"><a href="../about.php">About</a></li>
 			<li class="<?php echo ($page_id == "contact" ? "active" : "");?>"><a href="../contact.php">Contact</a></li>
+			<li class="<?php echo ($page_id == "faq" ? "active" : "");?>"><a href="../faq.php">FAQs</a></li>
 			<!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
 			<li class="dropdown">
 				<a class="dropdown-toggle"

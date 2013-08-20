@@ -10,10 +10,10 @@ $title = "KeepSafe Security &middot; Contact Us";
 		<div class="well">
 			<form method="POST" action="contact-form-submission.php" id="contact" class="form-horizontal">
 				<fieldset>
-					<legend>Sample Contact Form <small>(will not submit any information)</small></legend>
+					<legend>Send us a message! <small>(we'll respond as soon as possible.)</small></legend>
 
 					<?php  
-					if (isset($_GET['success'])) echo "<div class=\"alert alert-success\">Thank you. We have successfully received your message.<a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a></div>";
+					if (isset($_GET['success'])) echo "<div class=\"alert alert-success\">Thank you. We have successfully received your message.<button data-dismiss=\"alert\" class=\"close\" type=\"button\">×</button></div>";
 					?>  
 
 					<div class="control-group">
@@ -95,45 +95,5 @@ $title = "KeepSafe Security &middot; Contact Us";
 		<input type="submit" value="Subscribe Now!" class="btn btn-danger" />
 	</form>
 </div>
-
-<script>
-$(document).ready(function(){
-
-	// Validate
-	// http://bassistance.de/jquery-plugins/jquery-plugin-validation/
-	// http://docs.jquery.com/Plugins/Validation/
-	// http://docs.jquery.com/Plugins/Validation/validate#toptions
-
-		$('#contact').validate({
-	    rules: {
-	      name: {
-	        minlength: 2,
-	        required: true
-	      },
-	      email: {
-	        required: true,
-	        email: true
-	      },
-	      subject: {
-	      	minlength: 2,
-	        required: true
-	      },
-	      message: {
-	        minlength: 2,
-	        required: true
-	      }
-	    },
-			highlight: function(element) {
-				$(element).closest('.control-group').removeClass('success').addClass('error');
-			},
-			success: function(element) {
-				element
-				.text('OK!').addClass('valid')
-				.closest('.control-group').removeClass('error').addClass('success');
-			}
-	  });
-
-}); // end document.ready
-</script>
 
 <?php include 'includes/overall/footer.php'; ?>

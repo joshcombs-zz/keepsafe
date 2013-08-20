@@ -1,10 +1,80 @@
-<hr>
 
 <footer>
-  <p class="pull-right"><a href="#">Back to top</a></p>
-  <p>&copy; 2013 Keepsafe Security &middot; <a href="privacy.php">Privacy</a> &middot; <a href="terms.php">Terms</a></p><hr>
-  <p><small>Keepsafe Security Systems is a full service alarm company specializing in the design and professional installation of wireless UL listed burglar alarm systems with remote access, fire alarms, residential and commercial security camera systems, CCTV, surveillance cameras, access control, key cards, key fobs, and more.</small></p>
-  <p class="pull-right"><small>Website designed and maintained by <a href="mailto:josh.combs@me.com?Subject=KeepSafe%20Website">Josh Combs</a><small></p>
+  <div class="well">
+<div class="row-fluid">
+        <div class="span12">
+          <div class="span4" style="width: 29%;">
+            <ul class="unstyled">
+              <li>Newsflash<li>
+                <div id="flashNews">
+                  <div class="news">
+                    Victims of burglary offenses suffered an estimated $4.6 billion in lost property in 2009; overall, the average dollar loss per burglary offense was $2,096.
+                  </div>
+                  <div class="news">
+                    In 2009, there were an estimated 2,199,125 burglaries & a decrease of 1.3 percent when compared with 2008 data.
+                  <br><br>
+                  </div>
+                  <div class="news">
+                    Burglary accounted for 23.6 percent of the estimated number of property crimes committed in 2009.
+                  </div>
+                  <div class="news">
+                    Of all burglaries, 61.0 percent involved forcible entry, 32.6 percent were unlawful entries (without force), and the remainder (6.5 percent) were forcible entry attempts.
+                  </div>
+                </div>
+            </ul>
+          </div>
+          <div class="span2" style="width: 15%;">
+            <ul class="unstyled">
+              <li>Applications<li>
+              <li><a href="#">Product for Mac</a></li>
+              <li><a href="#">Product for Windows</a></li>
+              <li><a href="#">Product for Eclipse</a></li>
+              <li><a href="#">Product mobile apps</a></li>              
+            </ul>
+          </div>
+          <div class="span2" style="width: 15%;">
+            <ul class="unstyled">
+              <li>Services<li>
+              <li><a href="#">Web analytics</a></li>
+              <li><a href="#">Presentations</a></li>
+              <li><a href="#">Code snippets</a></li>
+              <li><a href="#">Job board</a></li>              
+            </ul>
+          </div>
+          <div class="span2" style="width: 15%;">
+            <ul class="unstyled">
+              <li>Documentation<li>
+              <li><a href="#">Product Help</a></li>
+              <li><a href="#">Developer API</a></li>
+              <li><a href="#">Product Markdown</a></li>
+              <li><a href="#">Product Pages</a></li>              
+            </ul>
+          </div>  
+          <div class="span2" style="width: 15%;">
+            <ul class="unstyled">
+              <li>Office: (704) 873-0803</li>
+              <li>Fax: (704) 873-0505</a></li>
+              <li>P.O. Box 7287</li>
+              <li>Statesville, NC 28625</li>
+              <li><a href="mailto:mark@keepsafesecurity.net">mark@keepsafesecurity.net</a></li>
+            </ul>
+          </div>          
+        </div>
+      </div>
+      <hr>
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="span8">
+            <a href="/terms.php">Terms of Service</a> &middot;
+            <a href="/privacy.php">Privacy</a>
+          </div>
+          <div class="span4">
+            <p class="muted pull-right">© 2013 KeepSafe Security. All rights reserved</p>
+          </div>
+        </div>
+      </div>
+</div>
+
 </footer>
 
 </div><!-- /.container -->
@@ -64,4 +134,21 @@ $(document).ready(function(){
 $('#myCarousel').carousel()
 })
   }(window.jQuery)
+
+
+
+var news = $('.news')
+current = 0;
+news.hide();
+Rotator();
+function Rotator() {
+    $(news[current]).fadeIn('slow').delay(6000).fadeOut('slow');
+    $(news[current]).queue(function() {
+        current = current < news.length - 1 ? current + 1 : 0;
+        Rotator();
+        $(this).dequeue();
+    });
+}
+
+
   </script>
