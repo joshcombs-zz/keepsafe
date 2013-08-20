@@ -72,10 +72,45 @@ $title = "KeepSafe Security &middot; Contact Us";
 <div class="row-fluid">
 	<div class="span12">
 		<div class="well">
-			<iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=132+Modular+Drive,+Statesville,+NC&amp;aq=0&amp;oq=132+modular+dri&amp;sll=37.6,-95.665&amp;sspn=38.406429,92.988281&amp;ie=UTF8&amp;hq=&amp;hnear=132+Modular+Dr,+Statesville,+North+Carolina+28625&amp;t=m&amp;ll=35.782658,-80.973701&amp;spn=0.02437,0.008583&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<style type="text/css">
+#user_gmap{ width:100%;height:400px; margin:20px20px 0px; }
+#user_glink {width:100%; text-align:right; font-size:10px; font-weight:normal; padding:0px; height:20px; margin:0px;}
+</style>
+<script type="text/javascript">
+google.maps.event.addDomListener(window, 'load', function() {
+	var mapdiv = document.getElementById('user_gmap');
+	var myOptions = {
+	zoom: 16,
+	center: new google.maps.LatLng(35.78268306107475,-80.97368938379674),
+	mapTypeId: google.maps.MapTypeId.ROADMAP,
+	scaleControl: true
+	};
+	var map = new google.maps.Map(mapdiv, myOptions);
+	var marker = new google.maps.Marker({
+	position: new google.maps.LatLng(35.78268306107475,-80.97368938379674),
+	map: map, 
+	title: 'KeepSafe Security Systems'
+	});
+	var infowindow = new google.maps.InfoWindow({
+	content: '<strong>KeepSafe Security Systems</strong><br />132 Modular Drive<br />Statesville, NC 28625',
+	size: new google.maps.Size(200, 200)
+	});
+	google.maps.event.addListener(marker, 'click', function() {
+	infowindow.open(map,marker);
+	});
+	infowindow.open(map,marker);
+});
+</script>
+<div id="user_gmap"></div>
+</div>
+
+
+
 		</div>
 	</div>
-</div>
 <! -- .row-fluid -->
 
 

@@ -87,6 +87,7 @@
   <script src="/assets/js/jquery-1.7.1.min.js"></script>
   <script src="/assets/js/bootstrap.js"></script>
   <script src="/assets/js/jquery.validate.js"></script>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
   <script>
 
 $(document).ready(function(){
@@ -126,6 +127,46 @@ $(document).ready(function(){
     });
 
 }); // end document.ready
+
+
+
+$(document).ready(function(){
+
+  // Validate
+  // http://bassistance.de/jquery-plugins/jquery-plugin-validation/
+  // http://docs.jquery.com/Plugins/Validation/
+  // http://docs.jquery.com/Plugins/Validation/validate#toptions
+
+    $('#paypalform').validate({
+      rules: {
+        os0: {
+          minlength: 4,
+          digits: true,
+          required: true
+        },
+        os1: {
+          minlength: 5,
+          digits: true,
+          required: true
+        },
+        amount: {
+          minlength: 2,
+          digits: true,
+          required: true
+        }
+      },
+      highlight: function(element) {
+        $(element).closest('.control-group').removeClass('success').addClass('error');
+      },
+      success: function(element) {
+        element
+        .text('OK!').addClass('valid')
+        .closest('.control-group').removeClass('error').addClass('success');
+      }
+    });
+
+}); // end document.ready
+
 
 
   !function ($) {
