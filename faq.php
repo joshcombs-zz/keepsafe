@@ -5,9 +5,8 @@ include 'core/init.php';
 include 'includes/overall/header.php'; ?>
 
 <!-- Three columns of text below the carousel -->
-<div class="row">
-  <div class="span12">
-    <div class="well">
+<div class="row-fluid">
+  <div class="span12 well">
 
     	<legend>Frequently Asked Questions</legend>
 
@@ -32,7 +31,6 @@ include 'includes/overall/header.php'; ?>
     		</div><!-- /.accordian-group -->
     	</div><!-- /.accordian -->
 
-    </div><!-- /.well -->
   </div><!-- /.span12 -->
 </div><!-- /.row -->
 

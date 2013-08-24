@@ -4,7 +4,7 @@ $title   = 'KeepSafe Security';
 include 'core/init.php';
 include 'includes/overall/header.php'; ?>
 
-<div id="myCarousel" class="carousel slide">
+<div id="myCarousel" class="carousel slide hidden-phone">
   <div class="carousel-inner">
     <div class="item active">
       <img src="/assets/img/cover1.jpg" alt="">
@@ -41,34 +41,46 @@ include 'includes/overall/header.php'; ?>
   <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
 </div>
 
-<!-- Main Content -->
-<div class="row">
-  <div class="span4 text-center">
-    <div class="well">
+<div class="row-fluid">
+  <div class="span4 text-center well">
       <i class="icon-thumbs-up icon-5x"></i>
       <h2>No Contracts</h2>
-      <p>We don't do service contracts, which means the equipment you buy is yours - forever. The only thing you sign is your monitoring agreement - if you elect to have your system monitored. All this states is that you agree to pay for monitoring and here is what to do in case of emergency.</p>
-      <p><a class="btn btn-primary input-medium" href="#">View details &raquo;</a></p>
-    </div>
-  </div><!-- /.span4 -->
-  <div class="span4 text-center">
-    <div class="well">
+      <p>
+        We don't do service contracts, which means the equipment you buy is yours - forever. 
+        The only thing you sign is your monitoring agreement - if you elect to have your system 
+        monitored. All this states is that you agree to pay for monitoring and here is what to 
+        do in case of emergency.
+      </p>
+      <p>
+        <a class="btn btn-primary" href="#">View details &raquo;</a>
+      </p>
+  </div>
+  <div class="span4 text-center well">
       <i class="icon-level-down icon-5x"></i>
       <h2>Low Monitoring Cost</h2>
-      <p>"Free" systems generally carry higher monthly monitoring costs that have increased significantly over time. KeepSafe Security is less expensive over the life of the equipment. We do not have a service contract. You have the freedeom to choose, so we keep our rates competitive and deliver quality service.</p>
-      <p><a class="btn btn-primary input-medium" href="#">Free Estimate</a></p>
-    </div>
-  </div><!-- /.span4 -->
-  <div class="span4 text-center">
-    <div class="well">
+      <p>
+        "Free" systems generally carry higher monthly monitoring costs that have increased 
+        significantly over time. KeepSafe Security is less expensive over the life of the equipment. 
+        We do not have a service contract. You have the freedeom to choose, so we keep our rates 
+        competitive and deliver quality service.
+      </p>
+      <p>
+        <a class="btn btn-primary" href="#">Free Estimate</a>
+      </p>
+  </div>
+  <div class="span4 text-center well">
       <i class="icon-time icon-5x"></i>
       <h2>KeepSafe to the Test</h2>
-      <p>Go ahead and call up one of those "National Burglar Alarm Companies" and see how long it takes to get a real representative on the line. Try it at 9 p.m. at night. Call us anytime and a real person will answer. Here at KeepSafe, we are available to help any time of day.</p>
-      <p><a class="btn btn-primary input-medium" href="#">View details &raquo;</a></p>
-    </div>
-  </div><!-- /.span4 -->
-</div><!-- /.row -->
-<!-- /.Main Content -->
+      <p>
+        Go ahead and call up one of those "National Burglar Alarm Companies" and see how long it 
+        takes to get a real representative on the line. Try it at 9 p.m. at night. Call us anytime 
+        and a real person will answer. Here at KeepSafe, we are available to help any time of day.
+      </p>
+      <p>
+        <a class="btn btn-primary" href="#">View details &raquo;</a>
+      </p>
+  </div>
+</div>
 
 
 <?php include 'includes/overall/footer.php'; ?>

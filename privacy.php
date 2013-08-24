@@ -4,9 +4,9 @@ $title   = 'KeepSafe Security Privacy Policy';
 include 'core/init.php';
 include 'includes/overall/header.php'; ?>
 
-<div class="row">
-	<div class="span12">
-		<div class="well">
+<div class="row-fluid">
+	<div class="span12 well">
+		
 			<legend>KeepSafe Security Privacy Policy</legend>
 			<p>This Privacy Policy governs the
 				manner in which KeepSafe Security collects, uses, maintains and discloses
@@ -180,7 +180,6 @@ include 'includes/overall/header.php'; ?>
 					josh.combs@me.com<br><br>
 					This document was last updated on April 22, 2013
 				<p>
-		</div>
 	</div> 
 </div><!-- /.row -->
 

@@ -1,47 +1,51 @@
 <?php
 $page_id = 'terms';
-$title = "KeepSafe Security &middot; Terms & Conditions";
+$title = "KeepSafe Security &middot; Terms of Service";
 ?>
 
 <?php 
 include 'core/init.php';
 include 'includes/overall/header.php'; ?>
 
-<div class="row">
-	<div class="span12">
-		<div class="well">
+<div class="row-fluid">
+	<div class="span12 well">
 
-			<legend>KeepSafe Security Terms and Conditions ("Agreement")</legend>
+			<legend>KeepSafe Security Terms of Service</legend>
 
 			<p>
-				Please read these Terms and Conditions ("Agreement", "Terms and Conditions") carefully before using 
-				http://www.keepsafesecurity.net ("the Site") operated by KeepSafe Security & Fire ("us", "we", or "our"). 
-				This Agreement sets forth the legally binding terms and conditions for your use of the Site at 
+				Please read the Terms of Service carefully before using 
+				our website. 
+				This Agreement sets forth the legally binding terms and conditions for your use of our website at 
 				http://www.keepsafesecurity.net.
 			</p>
 			<p>
-				By accessing or using the Site in any manner, including, but not limited to, visiting or browsing the Site 
-				or contributing content or other materials to the Site, you agree to be bound by these Terms and Conditions. 
+				By accessing or using our website in any manner, including, but not limited to, visiting or browsing the website 
+				or contributing content or other materials to the website, you agree to be bound by these Terms and Conditions. 
 				Capitalized terms are defined in this Agreement.
 			</p>
 
 			<p>
-				<strong>Intellectual Property</strong><br />
-				The Site and its original content, features and functionality are owned by KeepSafe Security & Fire and are 
-				protected by international copyright, trademark, patent, trade secret and other intellectual property or 
-				proprietary rights laws.
+				<strong>Usage</strong><br />
+				You may not copy, reproduce, republish, download, make available to the public, or otherwise use our website 
+				content in any way except for your own personal, non-commercial use. You also agree not to adapt, alter or create 
+				a derivative work from any our website content except for your own personal, non-commercial use. Any other use of 
+				our website content requires the prior written permission of us.
+				<br><br>
+				You agree to use our website only for lawful purposes, and in a way that does not infringe the rights of, restrict 
+				or inhibit anyone else's use and enjoyment of our website.
+
 			</p>
 
 			<p>
 				<strong>Termination</strong><br />
-				We may terminate your access to the Site, without cause or notice, which may result in the forfeiture and 
+				We may terminate your access to the website, without cause or notice, which may result in the forfeiture and 
 				destruction of all information associated with you. All provisions of this Agreement that by their nature 
 				should survive termination shall survive termination, including, without limitation, ownership provisions, 
 				warranty disclaimers, indemnity, and limitations of liability.
 			</p>
 
 			<p><strong>Links To Other Sites</strong><br />
-				Our Site may contain links to third-party sites that are not owned or controlled by KeepSafe Security & Fire.
+				Our website may contain links to third-party sites that are not owned or controlled by KeepSafe Security & Fire.
 			</p>
 
 			<p>KeepSafe Security & Fire has no control over, and assumes no responsibility for, the content, privacy policies, 
@@ -75,6 +79,5 @@ include 'includes/overall/header.php'; ?>
 
 		</div>
 	</div>
-</div>
 
 <?php include 'includes/overall/footer.php'; ?>

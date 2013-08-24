@@ -27,9 +27,8 @@ if (empty($_POST) === false) {
 include 'includes/overall/header.php'; ?>
 
 <!-- Main Content -->
-<div class="row">
-	<div class="span12">
-		<div class="well">
+<div class="row-fluid">
+	<div class="span12 well">
 
 			<form action="" method="POST" class="form-horizontal" id="change_password">
 				<fieldset>
@@ -82,10 +81,8 @@ include 'includes/overall/header.php'; ?>
 }
 ?>
 
-		</div>
 	</div>
 </div><!-- /.row -->
-<!-- /.Main Content -->
 
 
 <?php include 'includes/overall/footer.php';?>

@@ -34,6 +34,10 @@ if (empty($_POST) === false) {
     if ($_POST['password'] === $_POST['email']) {
       $errors[] = 'Your password must not be the same as your email.';
     }
+    if(empty($_POST['agree']) || $_POST['agree'] != 'agree')
+    {
+      $errors[] = 'You must agree to the terms before you can register!';
+    }
   }
 }
 ?>
@@ -110,6 +114,9 @@ if (empty($_POST) === false) {
             </div>
 
             <div class="controls">
+              <label class="checkbox" for="agree">
+                <input type="checkbox" name="agree" id="agree" value="agree"> I agree to the <a href="terms.php">Terms of Service</a>
+              </label>
               <button id="register-submit" type="submit" class="btn btn-primary">Register</button>
               <button type="reset" class="btn">Cancel</button>
             </div>

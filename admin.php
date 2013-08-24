@@ -8,16 +8,13 @@ admin_protect();
 include 'includes/overall/header.php'; 
 ?>
 
-<div class="row">
-	<div class="span12">
-		<div class="well">
+<div class="row-fluid">
+	<div class="span12 well">
 
 			<legend>Administration</legend>
 
-		</div>
 	</div>
 </div> 
-<!-- .row-fluid -->
 
 
 <?php include 'includes/overall/footer.php'; ?>
