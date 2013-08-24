@@ -23,13 +23,13 @@ if (isset($_GET['success'])) {
 					<div class="control-group">
 						<label class="control-label" for="name">Your Name</label>
 						<div class="controls">
-							<input id="name" name="name" type="text" class="input-xlarge" placeholder="John Doe"> 
+							<input id="name" name="name" type="text" class="input-xlarge" placeholder="John Doe" value="<?php echo ucfirst($user_data['first_name']); ?>"> 
 						</div>
 					</div>
 					<div class="control-group">
 						<label class="control-label" for="contact_email">Your Email Address</label>
 						<div class="controls">
-							<input id="contact_email" name="contact_email" type="text" class="input-xlarge" placeholder="your@emailaddress.com">
+							<input id="contact_email" name="contact_email" type="text" class="input-xlarge" placeholder="your@emailaddress.com" value="<?php echo strtolower(ucfirst($user_data['email'])); ?>">
 						</div>
 					</div>
 					<div class="control-group">

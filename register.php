@@ -1,12 +1,12 @@
 <?php
 $page_id = 'register';
-$title   = 'Register Now';
+$title = 'Register Now';
 ob_start();
 include 'core/init.php';
 logged_in_redirect();
 include 'includes/overall/header.php';
 
- if (empty($_POST) === false) {
+if (empty($_POST) === false) {
   $required_fields = array('first_name', 'last_name', 'email', 'password', 'password_again');
   foreach($_POST as $key=>$value) {
     if (empty($value) && in_array($key, $required_fields) === true) {
@@ -40,57 +40,57 @@ include 'includes/overall/header.php';
 
 <div class="row">
   <div class="span12">
-  	<div class="well">
+    <div class="well">
 
-  <form method="POST" action="register.php" class="form-horizontal" id="register">
-    <fieldset>
-    <legend>Register</legend>
+      <form method="POST" action="register.php" class="form-horizontal" id="register">
+        <fieldset>
+          <legend>Register</legend>
 
 
-          <?php 
-        if (isset($_GET['success']) && empty($_GET['success'])) {
-          echo '<div class="alert alert-success"><button type="button"class="close" data-dismiss="alert">×</button>You have been registered successfully. However, you must activate your account before you can log in. We
-          have sent instructions to your email address.
-          </div>
-          <a href="login.php" class="btn btn-primary">Log me in</a>';
-        } else {
-          if (empty($_POST) === false && empty($errors) === true) {
-            // register user
-            $register_data = array(
-              'first_name' => $_POST['first_name'],
-              'last_name'  => $_POST['last_name'],
-              'email'      => $_POST['email'],
-              'password'   => $_POST['password'],
-              'email_code' => md5($_POST['email'] + microtime())
-              );
+          <?php
+          if (isset($_GET['success']) && empty($_GET['success'])) {
+            echo '<div class="alert alert-success"><button type="button"class="close" data-dismiss="alert">×</button>You have been registered successfully. However, you must activate your account before you can log in. We
+            have sent instructions to your email address.
+            </div>
+            <a href="login.php" class="btn btn-primary">Log me in</a>';
+          } else {
+            if (empty($_POST) === false && empty($errors) === true) {
 
-            register_user($register_data);
-            header('Location: register.php?success');
-            exit();
+              $register_data = array(
+                'first_name' => ucfirst($_POST['first_name']),
+                'last_name'  => ucfirst($_POST['last_name']),
+                'email'      => strtolower($_POST['email']),
+                'password'   => $_POST['password'],
+                'email_code' => md5($_POST['email'] + microtime())
+                );
 
-          } else if (empty($errors) === false){
-            echo output_errors($errors);
-          } 
-      ?>
+              register_user($register_data);
+              header('Location: register.php?success');
+              exit();
+
+            } else if (empty($errors) === false){
+              echo output_errors($errors);
+            }
+            ?>
 
             <div class="control-group">
               <label class="control-label" for="first_name">First Name *</label>
               <div class="controls">
-                <input id="first_name" name="first_name" type="text" class="input" placeholder="John"> 
+                <input id="first_name" name="first_name" type="text" class="input" placeholder="John">
               </div>
             </div>
 
             <div class="control-group">
               <label class="control-label" for="last_name">Last Name *</label>
               <div class="controls">
-                <input id="last_name" name="last_name" type="text" class="input" placeholder="Doe"> 
+                <input id="last_name" name="last_name" type="text" class="input" placeholder="Doe">
               </div>
             </div>
 
             <div class="control-group">
               <label class="control-label" for="email">Email *</label>
               <div class="controls">
-                <input id="email" name="email" type="text" class="input" placeholder="your@email.com"> 
+                <input id="email" name="email" type="text" class="input" placeholder="your@email.com">
               </div>
             </div>
 
@@ -98,14 +98,14 @@ include 'includes/overall/header.php';
             <div class="control-group">
               <label class="control-label" for="password">Password *</label>
               <div class="controls">
-                <input id="password" name="password" type="password" class="input" placeholder="Password"> 
+                <input id="password" name="password" type="password" class="input" placeholder="Password">
               </div>
             </div>
 
             <div class="control-group">
               <label class="control-label" for="password_again">Re-Enter Password *</label>
               <div class="controls">
-                <input id="password_again" name="password_again" type="password" class="input" placeholder="Confirm Password"> 
+                <input id="password_again" name="password_again" type="password" class="input" placeholder="Confirm Password">
               </div>
             </div>
 
@@ -113,14 +113,14 @@ include 'includes/overall/header.php';
               <button id="register-submit" type="submit" class="btn btn-primary">Register</button>
               <button type="reset" class="btn">Cancel</button>
             </div>
-    </fieldset>
-  </form>
+          </fieldset>
+        </form>
 
-<?php
-}
-?>
+        <?php
+      }
+      ?>
 
-	</div><!-- /.well -->
+    </div><!-- /.well -->
   </div><!-- /.span -->
 </div><!-- /.row -->
 

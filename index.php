@@ -1,5 +1,5 @@
 <?php
-$page_id = 'home';
+$page_id = 'index';
 $title   = 'KeepSafe Security';
 include 'core/init.php';
 include 'includes/overall/header.php'; ?>

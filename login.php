@@ -45,7 +45,7 @@ include 'includes/overall/header.php';
           <?php echo output_errors($errors); ?>
 
             <div class="control-group">
-              <label class="control-label" for="email">Email</label>
+              <label class="control-label" for="email">Email Address</label>
               <div class="controls">
                 <input id="email" name="email" type="text" class="input" placeholder="your@email.com"> 
               </div>
@@ -61,9 +61,16 @@ include 'includes/overall/header.php';
             <div class="controls">
               <button id="login-submit" type="submit" class="btn btn-primary">Sign In</button>
               <button type="reset" class="btn">Cancel</button>
-            </div>
+            </div><p>
           </fieldset>
     </form>
+          <div class="controls">
+              <!-- <a href="recover.php?mode=email">Forgot Email </a>&middot; -->
+              <a href="recover.php?mode=password">Forgot Password</a>
+            </div>
+          </p>
+  </li>
+</ul>
 
   </div>
   </div><!-- /.span -->

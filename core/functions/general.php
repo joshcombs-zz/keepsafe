@@ -17,12 +17,27 @@ function protect_page() {
 	}
 }
 
+function admin_protect() {
+	global $user_data;
+	if (has_access($user_data['user_id'], 1) === false) {
+		header('Location: index.php');
+		exit();
+	}
+}
+function moderator_protect() {
+	global $user_data;
+	if (has_access($user_data['user_id'], 2) === false) {
+		header('Location: index.php');
+		exit();
+	}
+}
+
 function array_sanitize(&$item) {
-	$item = mysql_real_escape_string($item);
+	$item = htmlentities(strip_tags(mysql_real_escape_string($item)));
 }
 
 function sanitize($data) {
-	return mysql_real_escape_string($data);
+	return htmlentities(strip_tags(mysql_real_escape_string($data)));
 }
 
 function output_errors($errors) {

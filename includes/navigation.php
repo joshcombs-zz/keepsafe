@@ -9,7 +9,7 @@
 	<!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
 	<div class="nav-collapse collapse">
 		<ul class="nav">
-			<li class="<?php echo ($page_id == "home" ? "ative" : "");?>"><a href="/index.php">Home</a></li>
+			<li class="<?php echo ($page_id == "index" ? "active" : "");?>"><a href="/index.php">Home</a></li>
 			<li class="<?php echo ($page_id == "about" ? "active" : "");?>"><a href="/about.php">About</a></li>
 			<li class="<?php echo ($page_id == "contact" ? "active" : "");?>"><a href="/contact.php">Contact</a></li>
 			<li class="<?php echo ($page_id == "faq" ? "active" : "");?>"><a href="/faq.php">FAQs</a></li>
@@ -40,13 +40,20 @@
 					if (logged_in() === true) {
 						echo "<li class=\"dropdown\">
 						<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">
-						Hi ".$user_data['first_name']."
+						Hi ".ucfirst($user_data['first_name'])."
 						<b class=\"caret\"></b></a>
 						<ul class=\"dropdown-menu\">
 						<li class=\"nav-header\">User Settings</li>
+						<li><a href=\"/settings.php\">Account Information</a></li>
 						<li><a href=\"/changepassword.php\">Change Password</a></li>
-						<li><a href=\"/settings.php\">Settings</a></li>
-						<li><a href=\"/logout.php\">Logout</a></li>";
+						<li><a href=\"/logout.php\">Logout</a></li></ul>";
+
+						if (has_access($session_user_id, 1) === true) {
+							echo '<li class=" '.($page_id == "admin" ? "active" : "").'"><a href="/admin.php">Admin</a></li>';
+						} else if (has_access($session_user_id, 2) === true) {
+							echo '<li class=" '.($page_id == "customer" ? "active" : "").'"><a href="admin.php">Moderator</a></li>';
+						}
+
 					} else {
 						echo $login_links;
 					}
