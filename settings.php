@@ -33,7 +33,7 @@ include 'includes/overall/header.php'; ?>
 <div class="row-fluid">
 	<div class="span12 well">
 
-			<form action="" method="POST" class="form-horizontal" id="change_password">
+			<form action="" method="POST" class="form-horizontal" id="update_settings">
 				<fieldset>
 					<legend>Update Your Information</legend>
 
@@ -68,7 +68,7 @@ include 'includes/overall/header.php'; ?>
 					</div>
 
 					<div class="control-group">
-						<label class="control-label" for="account">Account #</label>
+						<label class="control-label muted" for="account">Account #</label>
 						<div class="controls">
 							<input id="account" name="account" type="text" class="input" value="<?php echo $user_data['account']; ?>" disabled> 
 						</div>
@@ -116,8 +116,7 @@ include 'includes/overall/header.php'; ?>
 						</div>
 					</div>
 					<div class="controls">
-						<button id="updateinfo-submit" type="submit" class="btn btn-primary" value="update">Update Information</button>
-						<button type="reset" class="btn">Cancel</button>
+						<button id="updateinfo-submit" type="submit" class="btn btn-primary input-medium" value="update">Update Information</button>
 					</div>
 
 				</fieldset>

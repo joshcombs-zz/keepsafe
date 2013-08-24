@@ -77,6 +77,97 @@ $(document).ready(function(){
 
 
 
+$(document).ready(function(){
+
+  // Validate
+  // http://bassistance.de/jquery-plugins/jquery-plugin-validation/
+  // http://docs.jquery.com/Plugins/Validation/
+  // http://docs.jquery.com/Plugins/Validation/validate#toptions
+
+    $('#change_password').validate({
+      rules: {
+        current_password: {
+          minlength: 8,
+          required: true
+        },
+        password: {
+          rangelength: [8, 32],
+          required: true
+        },
+        password_again: {
+          rangelength: [8, 32],
+          equalTo: password,
+          required: true
+        }
+      },
+      highlight: function(element) {
+        $(element).closest('.control-group').removeClass('success').addClass('error');
+      },
+      success: function(element) {
+        element
+        .text('OK!').addClass('valid')
+        .closest('.control-group').removeClass('error').addClass('success');
+      }
+    });
+
+}); // end document.ready
+
+
+
+$(document).ready(function(){
+
+  // Validate
+  // http://bassistance.de/jquery-plugins/jquery-plugin-validation/
+  // http://docs.jquery.com/Plugins/Validation/
+  // http://docs.jquery.com/Plugins/Validation/validate#toptions
+
+    $('#update_settings').validate({
+      rules: {
+        first_name: {
+          minlength: 2,
+          required: true
+        },
+        last_name: {
+          minlength: 2,
+          required: true
+        },
+        address: {
+          maxlength: 75,
+          required: false
+        },
+        city: {
+          maxlength: 20,
+          required: false
+        },
+        state: {
+          minlength: 2,
+          maxlength: 2,
+          required: false
+        },
+        zip: {
+          minlength: 5,
+          maxlength: 5,
+          required: false
+        },
+        email: {
+          email: true,
+          required: true
+        }
+      },
+      highlight: function(element) {
+        $(element).closest('.control-group').removeClass('success').addClass('error');
+      },
+      success: function(element) {
+        element
+        .text('OK!').addClass('valid')
+        .closest('.control-group').removeClass('error').addClass('success');
+      }
+    });
+
+}); // end document.ready
+
+
+
   !function ($) {
     $(function(){
 // carousel demo

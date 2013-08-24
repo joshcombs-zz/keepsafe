@@ -30,7 +30,7 @@ include 'includes/overall/header.php'; ?>
 				content in any way except for your own personal, non-commercial use. You also agree not to adapt, alter or create 
 				a derivative work from any our website content except for your own personal, non-commercial use. Any other use of 
 				our website content requires the prior written permission of us.
-				<br><br>
+				<br>
 				You agree to use our website only for lawful purposes, and in a way that does not infringe the rights of, restrict 
 				or inhibit anyone else's use and enjoyment of our website.
 
@@ -44,13 +44,23 @@ include 'includes/overall/header.php'; ?>
 				warranty disclaimers, indemnity, and limitations of liability.
 			</p>
 
-			<p><strong>Links To Other Sites</strong><br />
-				Our website may contain links to third-party sites that are not owned or controlled by KeepSafe Security & Fire.
+			<p><strong>Disclaimers & Limitation of Liability</strong><br />
+				All of our website content, including the information, images, pictures, logos and icons regarding or relating to 
+				us, its products and services (or links to third party products and services), are provided "as is" and on an "is 
+				available" basis without any representations or any kind of warranty made (whether express or implied by law) to 
+				the extent permitted by law, including the implied warranties of satisfactory quality, fitness for a particular 
+				purpose, non-infringement, compatibility, security and accuracy.
 			</p>
 
-			<p>KeepSafe Security & Fire has no control over, and assumes no responsibility for, the content, privacy policies, 
-				or practices of any third party sites or services. We strongly advise you to read the terms and conditions and 
-				privacy policy of any third-party site that you visit.
+			<p>Under no circumstances will we be liable for any of the following losses or damage (whether such losses where foreseen, 
+				foreseeable, known or otherwise): loss of data, loss of revenue or anticipated profits, loss of business, loss of 
+				opportunity, loss of goodwill or injury to reputation, losses suffered by third parties, any indirect, consequential, 
+				special or exemplary damages arising from the use of our website regardless of the form of action.
+			</p>
+
+			<p>
+				We do not warrant that functions contained in our website content will be uninterrupted or error free, that defects 
+				will be corrected, or that our website or the server that makes it available are free of viruses or bugs.
 			</p>
 
 			<p><strong>Governing Law</strong><br />This Agreement (and any futher rules, polices, or guidelines incorporated by 
