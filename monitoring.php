@@ -1,9 +1,13 @@
-	<div class="page-header">
-		<h1 class="text-center">Monitoring</h1>
-	</div>
+<?php
+$page_id = 'monitoring';
+$title   = 'KeepSafe Security Monitoring';
+include 'core/init.php';
+include 'includes/overall/header.php'; ?>
 
-	<div class="row-fluid">
-		<div class="col-lg-12">
+<div class="row">
+	<div class="span12">
+		<div class="well">
+			<legend>Monitoring</legend>
 			<p>
 				Here at KeepSafe, our central station is called Loss Prevention Services - located
 				in Clemmons, NC. It is secured with eight inch thick
@@ -53,3 +57,7 @@
 			</p>
 		</div>
 	</div>
+</div><!-- /.row -->
+
+
+<?php include 'includes/overall/footer.php'; ?>

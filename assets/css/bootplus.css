@@ -105,7 +105,7 @@ sub {
 img {
   width: auto\9;
   height: auto;
-  max-width: 100%;
+  max-width: 200px;
   vertical-align: middle;
   border: 0;
   -ms-interpolation-mode: bicubic;
@@ -231,7 +231,7 @@ body {
   font-size: 13px;
   line-height: 20px;
   color: #444444;
-  background-color: #e5e5e5;
+  background-color: #006699;
 }
 
 a {

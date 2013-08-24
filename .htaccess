@@ -1,1 +1,6 @@
+RewriteEngine on
+RewriteRule ^index\.php$ / [R]
+
 ErrorDocument 404 /404.php 
+Options -Indexes 
+ErrorDocument 403 /403.php

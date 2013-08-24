@@ -1,17 +1,15 @@
-  <?php
+<?php
 $page_id = 'manuals';
-$title = "KeepSafe Security &middot; Manuals";
-?>
+$title   = 'User Manuals';
+include 'core/init.php';
+include 'includes/overall/header.php'; ?>
 
-<?php include 'includes/overall/header.php'; ?>
-
-    <!-- Three columns of text below the carousel -->
-    <div class="row">
-      <div class="span12">
+<div class="row">
+    <div class="span12">
         <div class="well">
-    <div class="page-header">
-    <h1>User Manuals <small>Click the download link beside your keypad model to view the user manual</small></h1>
-    </div>
+            <div class="page-header">
+                <h1>User Manuals <small>Click the download link beside your keypad model to view the user manual</small></h1>
+            </div>
             <table class="table table-bordered table-condensed">
                 <tr>
                     <th>Picture</th>
@@ -60,7 +58,8 @@ $title = "KeepSafe Security &middot; Manuals";
                 </tr>
             </table>
         </div>
-      </div><!-- /.span4 -->
-    </div><!-- /.row -->
+    </div><!-- /.span4 -->
+</div><!-- /.row -->
+
 
 <?php include 'includes/overall/footer.php'; ?>

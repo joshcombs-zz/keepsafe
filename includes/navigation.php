@@ -5,15 +5,15 @@
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
 	</button>
-	<a class="brand" href="index.php">KeepSafe Security</a>
+	<a class="brand" href="/index.php">KeepSafe Security</a>
 	<!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
 	<div class="nav-collapse collapse">
 		<ul class="nav">
-			<li class="<?php echo ($page_id == "home" ? "active" : "");?>"><a href="../index.php">Home</a></li>
-			<li class="<?php echo ($page_id == "about" ? "active" : "");?>"><a href="../about.php">About</a></li>
-			<li class="<?php echo ($page_id == "contact" ? "active" : "");?>"><a href="../contact.php">Contact</a></li>
-			<li class="<?php echo ($page_id == "faq" ? "active" : "");?>"><a href="../faq.php">FAQs</a></li>
-			<li><a href="#myModal" role="button" data-toggle="modal">Make a Payment</a>
+			<li class="<?php echo ($page_id == "home" ? "ative" : "");?>"><a href="/index.php">Home</a></li>
+			<li class="<?php echo ($page_id == "about" ? "active" : "");?>"><a href="/about.php">About</a></li>
+			<li class="<?php echo ($page_id == "contact" ? "active" : "");?>"><a href="/contact.php">Contact</a></li>
+			<li class="<?php echo ($page_id == "faq" ? "active" : "");?>"><a href="/faq.php">FAQs</a></li>
+			<li><a href="#payment" role="button" data-toggle="modal">Make a Payment</a>
 			<!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
 			<li class="dropdown">
 				<a class="dropdown-toggle"
@@ -22,7 +22,7 @@
 				Services
 				<b class="caret"></b></a>
 				<ul class="dropdown-menu">
-					<li><a href="#">Monitoring</a></li>
+					<li><a href="/monitoring.php">Monitoring</a></li>
 					<li><a href="#">Video Surveillance</a></li>
 					<li><a href="#">Burglar Alarms</a></li>
 					<li><a href="#">Fire Alarms</a></li>
@@ -35,15 +35,32 @@
 				</ul>
 			</li>
 		</ul>
+			<ul class="nav pull-right">
+				<?php
+					if (logged_in() === true) {
+						echo "<li class=\"dropdown\">
+						<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">
+						Hi ".$user_data['first_name']."
+						<b class=\"caret\"></b></a>
+						<ul class=\"dropdown-menu\">
+						<li class=\"nav-header\">User Settings</li>
+						<li><a href=\"/changepassword.php\">Change Password</a></li>
+						<li><a href=\"/settings.php\">Settings</a></li>
+						<li><a href=\"/logout.php\">Logout</a></li>";
+					} else {
+						echo $login_links;
+					}
+					?>
+			</ul>
 	</div><!--/.nav-collapse -->
 </div><!-- /.navbar-inner -->
 
 
 <!-- Modal -->
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="payment" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-		<h3 id="myModalLabel">Make a Payment</h3>
+		<legend>Make A Payment</legend>
 	</div>
 	<div class="modal-body">
 
@@ -58,7 +75,7 @@
 				<label class="control-label" for="account">Account #:</label>
 				<input type="hidden" value="account" name="on0">
 				<div class="controls">
-					<input type="text" id="account" size="15" name="os0" placeholder="1234"><br>
+					<input type="text" id="account" size="15" name="os0" placeholder="1234" value="<?php echo $user_data['account'] ?>"<?php if (logged_in() === true) { echo 'disabled'; }?>><br>
 				</div>
 			</div>
 			<div class="control-group">
