@@ -1,6 +1,6 @@
 <?php
 session_start();
-error_reporting();
+error_reporting(0);
 
 $current_file = explode('/', $_SERVER['SCRIPT_NAME']);
 $current_file = end($current_file);
@@ -18,7 +18,7 @@ if (logged_in() === true) {
 		header('Location: index.php');
 		exit();
 	}
-	if ($current_file !== 'changepassword.php' && $user_data['password_recover'] ==1) {
+	if ($current_file !== 'changepassword.php' && $user_data['password_recover'] == 1) {
 		header('Location: changepassword.php?force');
 		exit();
 	}

@@ -1,31 +1,11 @@
 <?php
 ob_start();
-$page_id = 'updateinfo';
+$page_id = 'manageusers';
 $title   = 'Update User Information';
 include 'core/init.php';
 protect_page();
 
-$grav_url = "http://www.gravatar.com/avatar/" . md5(strtolower(trim($user_data['email']))) . "?d=" . urlencode( '' ) . "&s=" . 220;
-
-if (empty($_POST) === false) {
-	$required_fields = array('first_name', 'last_name', 'email');
-	foreach($_POST as $key=>$value) {
-    if (empty($value) && in_array($key, $required_fields) === true) {
-      $errors[] = 'Fields marked with an * are required.';
-      break 1;
-	  }
-	}
-
-	if (empty($errors) === true) {
-		if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) === false) {
-			$errors[] = 'A valid email address is required.';
-		} else if (email_exists($_POST['email']) === true && $user_data['email'] !== $_POST['email']) {
-			$errors[] = 'Sorry, the email \'' . $_POST['email'] . '\' is already in use.';
-		}
-	}
-
-
-}
+// $gravimg_url = "http://www.gravatar.com/avatar/" . md5(strtolower(trim($user_data['email']))) . "?d=" . urlencode( '' ) . "&s=" . 220;
 
 include 'includes/overall/header.php'; ?>
 
@@ -33,16 +13,21 @@ include 'includes/overall/header.php'; ?>
 <div class="row-fluid">
 	<div class="span12 well">
 
-			<form action="" method="POST" class="form-horizontal" id="update_settings">
+<?php include 'includes/admin_navigation.php'; ?>
+
+		<div class="span7">
+
+			<form action="" method="POST" class="form-horizontal" id="admin_update_account">
 				<fieldset>
-					<legend>Update Your Information</legend>
+					<legend>Edit Account</legend>
 
 					<?php 
-					if (isset($_GET['success']) === true && empty($_GET['success']) === true) {
-						echo '<div class="alert alert-success">Your details have been updated successfully!</div><a href="settings.php" class="btn">Go Back</a>';
+					if (isset($_GET['edit']) === true && empty($_GET['edit']) === true) {
+						echo '<div class="alert alert-success">Your details have been updated successfully!</div><a href="manageusers.php" class="btn">Go Back</a>';
 					} else {
 					if (empty($_POST) === false && empty($errors) === true) {
 							$update_data = array(
+								'account'	 => $_POST['account'],
 								'first_name' => $_POST['first_name'],
 								'last_name'  => $_POST['last_name'],
 								'address' 	 => $_POST['address'],
@@ -53,24 +38,18 @@ include 'includes/overall/header.php'; ?>
 								);
 
 							update_user($session_user_id, $update_data);
-							header('Location: settings.php?success');
+							header('Location: manageusers.php?success');
 							exit();
 
 						} else if (empty($errors) === false) {
 							echo output_errors($errors);
 						}
 					?>
-					<div class="control-group">
-						<label class="control-label" for="grav">Your Picture</label>
-						<div class="controls">
-							<img src="<?php echo $grav_url; ?>" alt="" />
-						</div>
-					</div>
 
 					<div class="control-group">
-						<label class="control-label muted" for="account">Account #</label>
+						<label class="control-label" for="account">Account #</label>
 						<div class="controls">
-							<input id="account" name="account" type="text" class="input" value="<?php echo $user_data['account']; ?>" disabled> 
+							<input id="account" name="account" type="text" class="input" value="<?php echo $user_data['account']; ?>"> 
 						</div>
 					</div>
 				    <div class="control-group">
@@ -125,8 +104,10 @@ include 'includes/overall/header.php'; ?>
 <?php 
 } 
 ?>
-
+		</div>
 	</div>
 </div>
 
-<?php include 'includes/overall/footer.php';?>
+<?php 
+include 'includes/overall/footer.php';
+?>

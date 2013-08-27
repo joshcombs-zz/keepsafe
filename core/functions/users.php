@@ -65,6 +65,14 @@ function register_user($register_data) {
 	email($register_data['email'], 'Activate Your Account', "Hello " . $register_data['first_name'] . ",\n\nYou need to activate your account before you can sign in, so use the link below:\n\nhttp://localhost/activate.php?email=" . $register_data['email'] . "&email_code=" . $register_data['email_code'] . "\n\n- KeepSafe Security & Fire");
 }
 
+function delete_user() {
+	mysql_query("DELETE FROM `users` WHERE `user_id` = ''");
+}
+
+function user_count() {
+	return mysql_result(mysql_query("SELECT COUNT(`user_id`) FROM `users` WHERE `active` = 1"), 0);
+}
+
 function user_data($user_id) {
 	$data 	 = array();
 	$user_id = (int)$user_id;
@@ -107,7 +115,7 @@ function user_id_from_email($email) {
 function login($email, $password) {
 	$user_id = user_id_from_email($email);
 
-	$email = sanitize($email);
+	$email 	  = sanitize($email);
 	$password = md5($password);
 
 	return (mysql_result(mysql_query("SELECT COUNT(`user_id`) FROM `users` WHERE `email` = '$email' AND `password` = '$password'"), 0) == 1) ? $user_id : false;

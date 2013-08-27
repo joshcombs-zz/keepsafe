@@ -34,16 +34,17 @@ logged_in_redirect();
 include 'includes/overall/header.php'; 
 ?>
 
-<div class="row">
+<div class="row-fluid">
   <div class="span12">
-    <div class="well">
 
+
+    <div class="card">
     <form method="POST" action="login.php" class="form-horizontal">
       <fielset>
-      <legend>Sign In</legend>
+      <h3 class="card-heading simple">Sign In</h3>
 
           <?php echo output_errors($errors); ?>
-
+          <div class="card-body">
             <div class="control-group">
               <label class="control-label" for="email">Email Address</label>
               <div class="controls">
@@ -64,15 +65,13 @@ include 'includes/overall/header.php';
             </div><p>
           </fieldset>
     </form>
+  </div>
           <div class="controls">
               <!-- <a href="recover.php?mode=email">Forgot Email </a>&middot; -->
               <a href="recover.php?mode=password">Forgot Password</a>
             </div>
-          </p>
-  </li>
-</ul>
 
-  </div>
+    </div><!-- /.card -->
   </div><!-- /.span -->
 </div><!-- /.row -->
 

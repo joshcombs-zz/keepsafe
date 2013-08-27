@@ -1,6 +1,6 @@
 <?php 
-$page_id = 'faq';
-$title   = 'Frequenty Asked Questions';
+$page_id = 'support';
+$title   = 'Support';
 include 'core/init.php';
 include 'includes/overall/header.php'; ?>
 
@@ -8,7 +8,7 @@ include 'includes/overall/header.php'; ?>
 <div class="row-fluid">
   <div class="span12 well">
 
-    	<legend>Frequently Asked Questions</legend>
+    	<legend>Support</legend>
 
     	<div class="accordion" id="accordion2">
     		<div class="accordion-group">

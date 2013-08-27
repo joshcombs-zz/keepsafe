@@ -7,13 +7,9 @@ include 'includes/overall/header.php'; ?>
 <div id="myCarousel" class="carousel slide hidden-phone">
   <div class="carousel-inner">
     <div class="item active">
-      <img src="/assets/img/cover1.jpg" alt="">
+      <img src="/assets/img/test1.png" alt="">
       <div class="container">
-        <div class="carousel-caption">
-          <h1>Example headline.</h1>
-          <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          <a class="btn btn-large btn-primary" href="#">Sign up today</a>
-        </div>
+        
       </div>
     </div>
     <div class="item">
@@ -52,7 +48,7 @@ include 'includes/overall/header.php'; ?>
         do in case of emergency.
       </p>
       <p>
-        <a class="btn btn-primary" href="#">View details &raquo;</a>
+        <a class="btn" href="#">View details &raquo;</a>
       </p>
   </div>
   <div class="span4 text-center well">

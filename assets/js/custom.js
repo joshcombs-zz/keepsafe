@@ -5,6 +5,61 @@ $(document).ready(function(){
   // http://docs.jquery.com/Plugins/Validation/
   // http://docs.jquery.com/Plugins/Validation/validate#toptions
 
+    $('#update_account').validate({
+      rules: {
+        first_name: {
+          minlength: 2,
+          required: true
+        },
+        last_name: {
+          minlength: 2,
+          required: true
+        },
+        address: {
+          maxlength: 75,
+          required: false
+        },
+        city: {
+          required: false,
+          minlength: 3
+        },
+        state: {
+          required: false,
+          minlength: 2,
+          maxlength: 2
+        },
+        zip: {
+          digits: true,
+          maxlength: 5,
+          minlength: 5,
+          required: false
+        },
+        email: {
+          maxlength: 50,
+          email: true,
+          required: true
+        }
+      },
+      highlight: function(element) {
+        $(element).closest('.control-group').removeClass('success').addClass('error');
+      },
+      success: function(element) {
+        element
+        .text('OK!').addClass('valid')
+        .closest('.control-group').removeClass('error').addClass('success');
+      }
+    });
+
+}); // end document.ready
+
+
+$(document).ready(function(){
+
+  // Validate
+  // http://bassistance.de/jquery-plugins/jquery-plugin-validation/
+  // http://docs.jquery.com/Plugins/Validation/
+  // http://docs.jquery.com/Plugins/Validation/validate#toptions
+
     $('#contact').validate({
       rules: {
         name: {
@@ -111,61 +166,6 @@ $(document).ready(function(){
     });
 
 }); // end document.ready
-
-
-
-$(document).ready(function(){
-
-  // Validate
-  // http://bassistance.de/jquery-plugins/jquery-plugin-validation/
-  // http://docs.jquery.com/Plugins/Validation/
-  // http://docs.jquery.com/Plugins/Validation/validate#toptions
-
-    $('#update_settings').validate({
-      rules: {
-        first_name: {
-          minlength: 2,
-          required: true
-        },
-        last_name: {
-          minlength: 2,
-          required: true
-        },
-        address: {
-          maxlength: 75,
-          required: false
-        },
-        city: {
-          maxlength: 20,
-          required: false
-        },
-        state: {
-          minlength: 2,
-          maxlength: 2,
-          required: false
-        },
-        zip: {
-          minlength: 5,
-          maxlength: 5,
-          required: false
-        },
-        email: {
-          email: true,
-          required: true
-        }
-      },
-      highlight: function(element) {
-        $(element).closest('.control-group').removeClass('success').addClass('error');
-      },
-      success: function(element) {
-        element
-        .text('OK!').addClass('valid')
-        .closest('.control-group').removeClass('error').addClass('success');
-      }
-    });
-
-}); // end document.ready
-
 
 
   !function ($) {

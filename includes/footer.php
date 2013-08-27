@@ -61,11 +61,11 @@
     </div>  
     <div class="span3">
       <ul class="unstyled">
+        <li>Contact Us</li>
         <li>Office: (704) 873-0803</li>
         <li>Fax: (704) 873-0505</a></li>
         <li>P.O. Box 7287</li>
         <li>Statesville, NC 28625</li>
-        <li><a href="mailto:mark@keepsafesecurity.net">mark@keepsafesecurity.net</a></li>
       </ul>
     </div>
 
@@ -93,5 +93,4 @@
 <script src="/assets/js/jquery-1.7.1.min.js"></script>
 <script src="/assets/js/bootstrap.js"></script>
 <script src="/assets/js/jquery.validate.js"></script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<script type="text/javascript" src="assets/js/custom.js"></script>
+<script type="text/javascript" src="/assets/js/custom.js"></script>

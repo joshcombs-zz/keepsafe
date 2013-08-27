@@ -12,7 +12,7 @@
 			<li class="<?php echo ($page_id == "index" ? "active" : "");?>"><a href="/index.php">Home</a></li>
 			<li class="<?php echo ($page_id == "about" ? "active" : "");?>"><a href="/about.php">About</a></li>
 			<li class="<?php echo ($page_id == "contact" ? "active" : "");?>"><a href="/contact.php">Contact</a></li>
-			<li class="<?php echo ($page_id == "faq" ? "active" : "");?>"><a href="/faq.php">FAQs</a></li>
+			<li class="<?php echo ($page_id == "support" ? "active" : "");?>"><a href="/support.php">Support</a></li>
 			<li><a href="#payment" role="button" data-toggle="modal">Make a Payment</a>
 			<!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
 			<li class="dropdown">
@@ -31,25 +31,25 @@
 					<li><a href="/manuals.php">Manuals</a></li>
 					<li><a href="#">Update Call List</a></li>
 					<li><a href="#">Setup Service Call</a></li>
-					<li><a href="#">Free Security Quote</a></li>
+					<li><a href="#">Free Quote</a></li>
 				</ul>
 			</li>
 		</ul>
 			<ul class="nav pull-right">
 				<?php
-					if (logged_in() === true) {
+					if (logged_in($user_data['user_id']) === true) {
 						echo "<li class=\"dropdown\">
 						<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">
 						Hi ".ucfirst($user_data['first_name'])."
 						<b class=\"caret\"></b></a>
 						<ul class=\"dropdown-menu\">
 						<li class=\"nav-header\">User Settings</li>
-						<li><a href=\"/settings.php\">Account Information</a></li>
-						<li><a href=\"/changepassword.php\">Change Password</a></li>
-						<li><a href=\"/logout.php\">Logout</a></li></ul>";
+						<li><a href=\"/my_account.php\"><i class=\"icon-user\"></i> My Account</a></li>
+						<li><a href=\"/changepassword.php\"><i class=\"icon-gear\"></i> Change Password</a></li>
+						<li><a href=\"/logout.php\"><i class=\"icon-lock\"></i> Logout</a></li></ul>";
 
 						if (has_access($session_user_id, 1) === true) {
-							echo '<li class=" '.($page_id == "admin" ? "active" : "").'"><a href="/admin.php">Admin</a></li>';
+							echo '<li class=" '.($page_id == "adminhome" ? "active" : "").'"><a href="/admin.php"><i class="icon-home"></i> Admin</a></li>';
 						} else if (has_access($session_user_id, 2) === true) {
 							echo '<li class=" '.($page_id == "customer" ? "active" : "").'"><a href="admin.php">Moderator</a></li>';
 						}
